@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="Member">
+	<resultMap type="mvo" id="memberRM">
+      <result property="mem_id" column="mem_id" />
+      <result property="mem_password" column="mem_password"/>
+      <result property="mem_name" column="mem_name"/>
+      <result property="mem_email" column="mem_email"/>
+      <result property="mem_gender" column="mem_gender"/>
+      <result property="mem_bloodType" column="mem_bloodType"/>
+      <result property="mem_job" column="mem_job"/>
+      <result property="mem_favorPlace" column="mem_favorPlace"/>
+      <result property="mem_coupleDay" column="mem_coupleDay"/>
+      <result property="mem_passQuestion" column="mem_passQuestion"/>
+      <result property="mem_passAnswer" column="mem_passAnswer"/>
+      <result property="mem_profileImg" column="mem_profileImg"/>
+      <result property="mem_style" column="mem_style"/>
+      <result property="mem_recommendCount" column="mem_recommendCount"/>
+      <result property="mem_point" column="mem_point"/>
+      <result property="mem_heart" column="mem_heart"/>
+      <result property="mem_temperature" column="mem_temperature"/>
+   </resultMap>
+   
+	<insert id="registerMember" parameterType="mvo">
+		Insert into member values(#{mem_id},#{mem_password},#{mem_name},
+		#{mem_email},#{mem_gender},#{mem_bloodType},#{mem_job},#{mem_favorPlace},
+		#{mem_coupleDay},#{mem_passQuestion},#{mem_passAnswer},#{mem_profileImg},
+		#{mem_style},#{mem_recommendCount},#{mem_point},#{mem_heart},#{mem_temperature})
+	</insert>
+	
+   <sql id="select-member">
+      SELECT mem_id, mem_password, mem_name, mem_email, mem_gender, mem_bloodType, 
+      mem_job, mem_favorPlace, mem_coupleDay, mem_passQuestion, mem_passAnswer, 
+      mem_profileImg, mem_style, mem_recommendCount, mem_point, mem_heart, mem_temperature 
+      FROM member 
+   </sql>
+   
+   <select id="login" parameterType="mvo" resultType="mvo">
+      <include refid="select-member"></include>
+      WHERE mem_id=#{mem_id} AND mem_password=#{mem_password}
+   </select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

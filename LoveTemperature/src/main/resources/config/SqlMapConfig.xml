@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+
+ <!-- <properties resource="config/jdbc.properties"/> -->
+
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+	
+	<typeAliases>
+		<typeAlias type="model.vo.person.MemberVO" alias="mvo" />
+		<typeAlias type="model.vo.person.AdminVO" alias="avo" />
+		<typeAlias type="model.vo.person.MyLoverVO" alias="mlvo" />
+
+		<typeAlias type="model.vo.question.QuestionVO" alias="qvo" />
+		<typeAlias type="model.vo.question.QuestionLogVO" alias="qlvo" />
+		<typeAlias type="model.vo.question.DateTypeVO" alias="dtvo" />
+
+		<typeAlias type="model.vo.point.EventBoxVO" alias="ebvo" />
+		<typeAlias type="model.vo.point.ProductVO" alias="pvo" />
+
+		<typeAlias type="model.vo.datePlace.DatePlaceVO" alias="dpvo" />
+		<typeAlias type="model.vo.board.LoveCounselVO" alias="lcvo" />
+		<typeAlias type="model.vo.board.comment.LoveCounselCommentVO" alias="lccvo" />
+		<typeAlias type="model.vo.board.comment.DatePlaceCommentVO" alias="dpcvo" />
+		<typeAlias type="model.vo.board.UserDatePlaceVO" alias="udpvo" />
+		<typeAlias type="model.vo.couplelook.CoupleLookVO" alias="clvo" />
+		<typeAlias type="model.vo.couplelook.CoupleLookLogVO" alias="cllvo" />
+		<typeAlias type="model.vo.board.NoticeVO" alias="nvo" />
+	</typeAliases>
+
+	<!-- <environments default="">
+		<environment id="">
+			<transactionManager type="JDBC" />
+			<dataSource type="UNPOOLED">
+				properties 파일에 로드된 resource는 ${}로 접근 가능하다..EL식 표현
+				<property name="driver" value="${JDBC.Driver}" />
+				<property name="url" value="${JDBC.ConnectionURL}" />
+				<property name="username" value="${JDBC.Username}" />
+				<property name="password" value="${JDBC.Password}" />
+			</dataSource>
+		</environment>
+	</environments> -->
+	
+
+	<mappers>
+		<mapper resource="sql/admin.xml" />
+		<mapper resource="sql/member.xml" />
+		<mapper resource="sql/board-lovecounsel.xml" />
+		<mapper resource="sql/board-notice.xml" />
+		<mapper resource="sql/board-userdateplace.xml" />
+		<mapper resource="sql/dateplace.xml" />
+		<mapper resource="sql/couplelook.xml" />
+		<mapper resource="sql/question.xml" />
+		<mapper resource="sql/event.xml" />
+	</mappers>
+
+	
+</configuration>
+
+
+
+
+
+
+
+
